@@ -10,8 +10,8 @@ const getSecretKey = function(endpoint){
     } 
   }
   const keys = Object.assign({}, data.keys, objectFunction);
-  return keys.getKeyByIndex([data.endpoints.indexOf(endpoint)])
-
+  const keyFound = keys.getKeyByIndex([data.endpoints.indexOf(endpoint)])
+  return keyFound === undefined ?  `The endpoint: ${endpoint} has no key` : keyFound
 };
 
 
